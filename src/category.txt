@@ -1,0 +1,6 @@
+bird:鸟-小鸟-鸟类
+cat:猫-小猫-猫猫
+dog:狗-小狗-狗狗
+horse:马-小马-大马
+panda:熊猫
+computer:电脑-计算机

@@ -1,0 +1,37 @@
+I:Index
+U:Unique
+
+user_profile:
+    lang:用户的语言，目前都是zh-CN，将来用作用户语音输入和后台分词的语言
+    (IU)user_id：用户ID，服务器端生成的唯一的用户id
+    (IU)user_name:用户名
+    password：用户的密码，md5格式存放
+    server:用户照片存放的服务器public DNS name
+    token：每次注册和登录时生成的token     #add
+    
+voice_images：
+    (IU)user_id：用户的唯一Id
+    desc：分词好的用户的语音输入“2014年_nt 3月_nt 的_u 照片_n”
+    token：每次注册和登录时生成的token      #add
+    image_name:图片的名称， 每张图片唯一的
+    tags:数组，里面存放了所有的图片的tag信息
+        "tags" : [
+                "94c3aa36-90ba-47a0-af6c-c67fc2863be9" （人脸ID）
+                "tiananmen", （转化成拼音的tag）
+        ],
+    (I)processed: true/false，表示这张图片是否被后台处理过
+    (I)time:datetime object格式存放
+    location:{longitude:119.123344, latitude:38.54192983}经纬度信息
+    
+person_list:
+    (IU)user_id:用户的唯一id
+    (I)name:当前这张脸对应的名字  [从左至右]
+    face_id:当前这张脸的id  [从左至右]
+    candidates:和这张脸很相似的脸的id列表
+        "candidates" : [ { "confidence" : 0.8432389, "faceId" : "6f602f25-d069-4fef-96d7-ca75356d7430" }, 
+                        { "confidence" : 0.774540067, "faceId" : "94c3aa36-90ba-47a0-af6c-c67fc2863be9" } ]    [[{},{}],[{},{}],...]
+    
+server_usage：
+    (IU)name:public DNS name，唯一，索引
+    count:当前这台服务器上有多少用户
+    capacity: 这台服务器对应容量

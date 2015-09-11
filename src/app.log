@@ -1,0 +1,830 @@
+09/07/2015 03:30:31 PM DEBUG:in login
+09/07/2015 03:31:02 PM ERROR:Uncaught exception POST /login (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/login', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Accept-Language': 'zh-Hans;q=1', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Connection': 'keep-alive', 'Host': '10.172.88.78:8888', 'Content-Length': '59'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\LoginHandler.py", line 21, in post
+    user = MongoHelper.get_user(user_id, password)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 13, in get_user
+    return coll.find_one({'user_id': userId, 'password': password})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:31:02 PM ERROR:500 POST /login (10.172.88.78) 30464.46ms
+09/07/2015 03:31:02 PM DEBUG:in login
+09/07/2015 03:31:32 PM ERROR:Uncaught exception POST /login (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/login', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Accept-Language': 'zh-Hans;q=1', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Connection': 'keep-alive', 'Host': '10.172.88.78:8888', 'Content-Length': '59'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\LoginHandler.py", line 21, in post
+    user = MongoHelper.get_user(user_id, password)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 13, in get_user
+    return coll.find_one({'user_id': userId, 'password': password})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:31:32 PM ERROR:500 POST /login (10.172.88.78) 30371.39ms
+09/07/2015 03:31:32 PM DEBUG:in search
+09/07/2015 03:32:02 PM ERROR:Uncaught exception POST /search (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/search', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Accept-Language': 'zh-Hans;q=1', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Connection': 'keep-alive', 'Host': '10.172.88.78:8888', 'Content-Length': '172'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\SearchHandler.py", line 26, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:32:02 PM ERROR:500 POST /search (10.172.88.78) 30280.34ms
+09/07/2015 03:32:02 PM DEBUG:in login
+09/07/2015 03:32:33 PM ERROR:Uncaught exception POST /login (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/login', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Accept-Language': 'zh-Hans;q=1', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Connection': 'keep-alive', 'Host': '10.172.88.78:8888', 'Content-Length': '59'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\LoginHandler.py", line 21, in post
+    user = MongoHelper.get_user(user_id, password)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 13, in get_user
+    return coll.find_one({'user_id': userId, 'password': password})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:32:33 PM ERROR:500 POST /login (10.172.88.78) 30289.34ms
+09/07/2015 03:32:33 PM DEBUG:in search
+09/07/2015 03:33:03 PM ERROR:Uncaught exception POST /search (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/search', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Accept-Language': 'zh-Hans;q=1', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Connection': 'keep-alive', 'Host': '10.172.88.78:8888', 'Content-Length': '172'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\SearchHandler.py", line 26, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:33:03 PM ERROR:500 POST /search (10.172.88.78) 30241.30ms
+09/07/2015 03:33:03 PM DEBUG:in login
+09/07/2015 03:33:33 PM ERROR:Uncaught exception POST /login (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/login', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Accept-Language': 'zh-Hans;q=1', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Connection': 'keep-alive', 'Host': '10.172.88.78:8888', 'Content-Length': '59'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\LoginHandler.py", line 21, in post
+    user = MongoHelper.get_user(user_id, password)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 13, in get_user
+    return coll.find_one({'user_id': userId, 'password': password})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:33:33 PM ERROR:500 POST /login (10.172.88.78) 30079.20ms
+09/07/2015 03:33:33 PM DEBUG:in search
+09/07/2015 03:34:03 PM ERROR:Uncaught exception POST /search (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/search', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Accept-Language': 'zh-Hans;q=1', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Connection': 'keep-alive', 'Host': '10.172.88.78:8888', 'Content-Length': '172'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\SearchHandler.py", line 26, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:34:03 PM ERROR:500 POST /search (10.172.88.78) 30440.44ms
+09/07/2015 03:35:13 PM DEBUG:in login
+09/07/2015 03:35:43 PM ERROR:Uncaught exception POST /login (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/login', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Accept-Language': 'zh-Hans;q=1', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Connection': 'keep-alive', 'Host': '10.172.88.78:8888', 'Content-Length': '59'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\LoginHandler.py", line 21, in post
+    user = MongoHelper.get_user(user_id, password)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 13, in get_user
+    return coll.find_one({'user_id': userId, 'password': password})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:35:43 PM ERROR:500 POST /login (10.172.88.78) 30415.42ms
+09/07/2015 03:36:30 PM INFO:200 GET /register (10.172.88.78) 12.01ms
+09/07/2015 03:37:39 PM DEBUG:in register
+09/07/2015 03:38:10 PM ERROR:Uncaught exception POST /register (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/register', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Accept-Encoding': 'gzip, deflate', 'Host': '10.172.88.78:8888', 'Content-Length': '115', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': '*/*', 'Accept-Language': 'zh-Hans;q=1', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/3.00)'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\RegistryHandler.py", line 25, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:38:10 PM ERROR:500 POST /register (10.172.88.78) 30507.49ms
+09/07/2015 03:38:10 PM DEBUG:in search
+09/07/2015 03:38:40 PM ERROR:Uncaught exception POST /search (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/search', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Accept-Encoding': 'gzip, deflate', 'Host': '10.172.88.78:8888', 'Content-Length': '43', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': '*/*', 'Accept-Language': 'zh-Hans;q=1', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/3.00)'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\SearchHandler.py", line 26, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:38:40 PM ERROR:500 POST /search (10.172.88.78) 30094.21ms
+09/07/2015 03:39:34 PM DEBUG:in register
+09/07/2015 03:40:04 PM ERROR:Uncaught exception POST /register (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/register', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Accept-Encoding': 'gzip, deflate', 'Host': '10.172.88.78:8888', 'Content-Length': '115', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': '*/*', 'Accept-Language': 'zh-Hans;q=1', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/3.00)'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\RegistryHandler.py", line 25, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:40:04 PM ERROR:500 POST /register (10.172.88.78) 30068.19ms
+09/07/2015 03:45:33 PM DEBUG:in register
+09/07/2015 03:46:04 PM ERROR:Uncaught exception POST /register (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/register', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Host': '10.172.88.78:8888', 'Accept-Language': 'zh-Hans;q=1', 'Accept-Encoding': 'gzip, deflate', 'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive', 'Content-Length': '115', 'Accept': '*/*', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/3.00)'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\RegistryHandler.py", line 25, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:46:04 PM ERROR:500 POST /register (10.172.88.78) 30065.19ms
+09/07/2015 03:49:29 PM DEBUG:in register
+09/07/2015 03:49:59 PM ERROR:Uncaught exception POST /register (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/register', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Content-Length': '115', 'Accept-Language': 'zh-Hans;q=1', 'Host': '10.172.88.78:8888', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/3.00)'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\RegistryHandler.py", line 25, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:49:59 PM ERROR:500 POST /register (10.172.88.78) 30216.29ms
+09/07/2015 03:49:59 PM DEBUG:in register
+09/07/2015 03:50:30 PM ERROR:Uncaught exception POST /register (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/register', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Content-Length': '115', 'Accept-Language': 'zh-Hans;q=1', 'Host': '10.172.88.78:8888', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/3.00)'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\RegistryHandler.py", line 25, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:50:30 PM ERROR:500 POST /register (10.172.88.78) 30211.29ms
+09/07/2015 03:50:31 PM DEBUG:in register
+09/07/2015 03:51:01 PM ERROR:Uncaught exception POST /register (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/register', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Content-Length': '115', 'Accept-Language': 'zh-Hans;q=1', 'Host': '10.172.88.78:8888', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/3.00)'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\RegistryHandler.py", line 25, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:51:01 PM ERROR:500 POST /register (10.172.88.78) 30391.41ms
+09/07/2015 03:51:01 PM DEBUG:in login
+09/07/2015 03:51:01 PM INFO:userid: b42c916c-3b1e-4235-85b7-451aea401218, pass:123
+09/07/2015 03:51:31 PM ERROR:Uncaught exception POST /login (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/login', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Content-Length': '59', 'Accept-Language': 'zh-Hans;q=1', 'Host': '10.172.88.78:8888', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\LoginHandler.py", line 22, in post
+    user = MongoHelper.get_user(user_id, password)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 13, in get_user
+    return coll.find_one({'user_id': userId, 'password': password})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:51:31 PM ERROR:500 POST /login (10.172.88.78) 30396.41ms
+09/07/2015 03:51:31 PM DEBUG:in search
+09/07/2015 03:52:02 PM ERROR:Uncaught exception POST /search (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/search', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Content-Length': '172', 'Accept-Language': 'zh-Hans;q=1', 'Host': '10.172.88.78:8888', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\SearchHandler.py", line 26, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:52:02 PM ERROR:500 POST /search (10.172.88.78) 30437.44ms
+09/07/2015 03:52:02 PM DEBUG:in register
+09/07/2015 03:52:32 PM ERROR:Uncaught exception POST /register (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/register', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Content-Length': '115', 'Accept-Language': 'zh-Hans;q=1', 'Host': '10.172.88.78:8888', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/3.00)'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\RegistryHandler.py", line 25, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:52:32 PM ERROR:500 POST /register (10.172.88.78) 30030.17ms
+09/07/2015 03:52:32 PM DEBUG:in search
+09/07/2015 03:52:58 PM DEBUG:in login
+09/07/2015 03:52:58 PM INFO:userid: b42c916c-3b1e-4235-85b7-451aea401218, pass:123
+09/07/2015 03:53:28 PM ERROR:Uncaught exception POST /login (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/login', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Connection': 'keep-alive', 'Host': '10.172.88.78:8888', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '59', 'Accept-Language': 'zh-Hans;q=1'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\LoginHandler.py", line 22, in post
+    user = MongoHelper.get_user(user_id, password)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 13, in get_user
+    return coll.find_one({'user_id': userId, 'password': password})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:53:28 PM ERROR:500 POST /login (10.172.88.78) 30253.32ms
+09/07/2015 03:53:28 PM DEBUG:in register
+09/07/2015 03:53:58 PM ERROR:Uncaught exception POST /register (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/register', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Connection': 'keep-alive', 'Host': '10.172.88.78:8888', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/3.00)', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '115', 'Accept-Language': 'zh-Hans;q=1'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\RegistryHandler.py", line 25, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:53:58 PM ERROR:500 POST /register (10.172.88.78) 30356.38ms
+09/07/2015 03:53:58 PM DEBUG:in search
+09/07/2015 03:54:29 PM ERROR:Uncaught exception POST /search (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/search', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Connection': 'keep-alive', 'Host': '10.172.88.78:8888', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '172', 'Accept-Language': 'zh-Hans;q=1'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\SearchHandler.py", line 26, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:54:29 PM ERROR:500 POST /search (10.172.88.78) 30381.40ms
+09/07/2015 03:57:34 PM DEBUG:in register
+09/07/2015 03:58:04 PM ERROR:Uncaught exception POST /register (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/register', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Content-Length': '115', 'Host': '10.172.88.78:8888', 'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 'Accept-Language': 'zh-Hans;q=1', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Accept': '*/*', 'Content-Type': 'application/x-www-form-urlencoded'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\RegistryHandler.py", line 25, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:58:04 PM ERROR:500 POST /register (10.172.88.78) 30130.23ms
+09/07/2015 03:58:04 PM DEBUG:in register
+09/07/2015 03:58:34 PM ERROR:Uncaught exception POST /register (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/register', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Content-Length': '115', 'Host': '10.172.88.78:8888', 'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 'Accept-Language': 'zh-Hans;q=1', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Accept': '*/*', 'Content-Type': 'application/x-www-form-urlencoded'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\RegistryHandler.py", line 25, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 03:58:34 PM ERROR:500 POST /register (10.172.88.78) 30208.29ms
+09/07/2015 03:59:42 PM DEBUG:in register
+09/07/2015 04:00:13 PM ERROR:Uncaught exception POST /register (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/register', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Content-Length': '115', 'Host': '10.172.88.78:8888', 'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 'Accept-Language': 'zh-Hans;q=1', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Accept': '*/*', 'Content-Type': 'application/x-www-form-urlencoded'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\RegistryHandler.py", line 25, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 04:00:13 PM ERROR:500 POST /register (10.172.88.78) 30245.31ms
+09/07/2015 04:00:13 PM DEBUG:in search
+09/07/2015 04:00:43 PM ERROR:Uncaught exception POST /search (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/search', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Content-Length': '136', 'Host': '10.172.88.78:8888', 'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 'Accept-Language': 'zh-Hans;q=1', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Accept': '*/*', 'Content-Type': 'application/x-www-form-urlencoded'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\SearchHandler.py", line 26, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 04:00:43 PM ERROR:500 POST /search (10.172.88.78) 30099.21ms
+09/07/2015 04:02:27 PM DEBUG:in register
+09/07/2015 04:02:58 PM ERROR:Uncaught exception POST /register (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/register', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Content-Type': 'application/x-www-form-urlencoded', 'Accept': '*/*', 'Accept-Language': 'zh-Hans;q=1', 'Accept-Encoding': 'gzip, deflate', 'Connection': 'keep-alive', 'Content-Length': '115', 'Host': '10.172.88.78:8888', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\RegistryHandler.py", line 25, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 04:02:58 PM ERROR:500 POST /register (10.172.88.78) 30513.15ms
+09/07/2015 04:12:01 PM INFO:304 GET /register (::1) 1.00ms
+09/07/2015 04:12:01 PM WARNING:404 GET /favicon.ico (::1) 1.01ms
+09/07/2015 04:14:26 PM DEBUG:in register
+09/07/2015 04:14:56 PM ERROR:Uncaught exception POST /register (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/register', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Accept-Language': 'zh-Hans;q=1', 'Accept-Encoding': 'gzip, deflate', 'Host': '10.172.88.78:8888', 'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive', 'Content-Length': '115', 'Accept': '*/*'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\RegistryHandler.py", line 25, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 04:14:56 PM ERROR:500 POST /register (10.172.88.78) 30234.88ms
+09/07/2015 04:14:56 PM DEBUG:in register
+09/07/2015 04:15:26 PM ERROR:Uncaught exception POST /register (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/register', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Accept-Language': 'zh-Hans;q=1', 'Accept-Encoding': 'gzip, deflate', 'Host': '10.172.88.78:8888', 'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive', 'Content-Length': '115', 'Accept': '*/*'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\RegistryHandler.py", line 25, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 04:15:26 PM ERROR:500 POST /register (10.172.88.78) 30464.01ms
+09/07/2015 04:17:24 PM DEBUG:in register
+09/07/2015 04:17:55 PM ERROR:Uncaught exception POST /register (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/register', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 'Host': '10.172.88.78:8888', 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': '*/*', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Accept-Language': 'zh-Hans;q=1', 'Content-Length': '115'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\RegistryHandler.py", line 25, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 04:17:55 PM ERROR:500 POST /register (10.172.88.78) 30428.99ms
+09/07/2015 04:18:50 PM DEBUG:in search
+09/07/2015 04:19:21 PM ERROR:Uncaught exception POST /search (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/search', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 'Host': '10.172.88.78:8888', 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': '*/*', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Accept-Language': 'zh-Hans;q=1', 'Content-Length': '43'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\SearchHandler.py", line 26, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 04:19:21 PM ERROR:500 POST /search (10.172.88.78) 30310.67ms
+09/07/2015 04:20:46 PM DEBUG:in search
+09/07/2015 04:21:17 PM ERROR:Uncaught exception POST /search (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/search', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Connection': 'keep-alive', 'Accept-Language': 'zh-Hans;q=1', 'Content-Length': '118', 'Accept': '*/*', 'Content-Type': 'application/x-www-form-urlencoded', 'Accept-Encoding': 'gzip, deflate', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Host': '10.172.88.78:8888'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\SearchHandler.py", line 26, in post
+    user = MongoHelper.get_user_by_id(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 18, in get_user_by_id
+    rec = coll.find_one({'user_id': userId})
+  File "C:\Python34\lib\site-packages\pymongo\collection.py", line 798, in find_one
+    for result in cursor.limit(-1):
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 977, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 902, in _refresh
+    self.__read_preference))
+  File "C:\Python34\lib\site-packages\pymongo\cursor.py", line 813, in __send_message
+    **kwargs)
+  File "C:\Python34\lib\site-packages\pymongo\mongo_client.py", line 728, in _send_message_with_response
+    server = topology.select_server(selector)
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 121, in select_server
+    address))
+  File "C:\Python34\lib\site-packages\pymongo\topology.py", line 97, in select_servers
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: mongodb1:27017: [Errno 11001] getaddrinfo failed
+09/07/2015 04:21:17 PM ERROR:500 POST /search (10.172.88.78) 30277.65ms
+09/07/2015 04:26:15 PM DEBUG:in register
+09/07/2015 04:26:16 PM INFO:200 POST /register (10.172.88.78) 963.63ms
+09/07/2015 04:26:19 PM DEBUG:in search
+09/07/2015 04:26:19 PM ERROR:Uncaught exception POST /search (10.172.88.78)
+HTTPServerRequest(protocol='http', host='10.172.88.78:8888', method='POST', uri='/search', version='HTTP/1.1', remote_ip='10.172.88.78', headers={'Content-Type': 'application/x-www-form-urlencoded', 'User-Agent': 'da zui shuo tu/1.0 (iPhone; iOS 8.4.1; Scale/2.00)', 'Host': '10.172.88.78:8888', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Content-Length': '186', 'Accept-Language': 'zh-Hans;q=1', 'Connection': 'keep-alive'})
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\tornado\web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\projects\vophoto\src\SearchHandler.py", line 69, in post
+    time_range = NLPTimeConvertor.time_api(rawTag,user_id)
+  File "C:\projects\vophoto\src\NLPTimeConvertor.py", line 515, in time_api
+    user_earliest_datetime = MongoHelper.get_earliest_date(user_id)
+  File "C:\projects\vophoto\src\MongoHelper.py", line 210, in get_earliest_date
+    return imgs_sort[0]
+IndexError: list index out of range
+09/07/2015 04:26:19 PM ERROR:500 POST /search (10.172.88.78) 19.01ms
+09/07/2015 04:34:10 PM DEBUG:in register
+09/07/2015 04:34:11 PM INFO:200 POST /register (10.172.88.78) 1270.73ms
