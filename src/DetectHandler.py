@@ -48,7 +48,7 @@ class DetectHandler(BaseAuthenticateHandler.BaseAuthenticateHandler):
             fh = open(path + "/" + fname, 'wb')
             fh.write(fileinfo['body'])
             Logger.debug('complete upload')       
-            faces = yield FaceUtils.detect_faces_in_photo(path + "/" + fname)
+            faces = yield FaceUtils.detect_faces_in_photo(path + "/" + fname,userId)
             if len(faces) == 0 or len(faces) > 10:
                 return
             
